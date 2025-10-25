@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CharacterListResponse } from "@/types/rickandmorty";
-import SearchClient from "@/components/rickandmorty/SearchClient";
 
 async function getCharacters() {
   const res = await fetch("https://rickandmortyapi.com/api/character", {
@@ -20,10 +19,8 @@ export default async function RickAndMortyPage() {
   return (
     <div className="p-8 max-w-7xl mx-auto">
       <h1 className="text-4xl font-bold text-green-400 text-left mb-8 drop-shadow-lg">
-        Lista de Personajes (SSG + ISR)
+        Lista de Personajes
       </h1>
-
-      <SearchClient />
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
         {characters.map((char) => (
